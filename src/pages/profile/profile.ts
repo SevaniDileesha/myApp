@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Http, Headers, RequestOptions}  from "@angular/http";
 import { LoadingController } from 'ionic-angular';
+import { ChatPage} from '../chat/chat';
 import 'rxjs/add/operator/map';
 /**
  * Generated class for the ProfilePage page.
@@ -22,6 +23,10 @@ items:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,  private http: Http,  public loading: LoadingController) {
   }
+
+  chat(){
+    this.navCtrl.push(ChatPage);
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
@@ -58,4 +63,5 @@ this.http.post('http://localhost/myApp/retrieve_data.php',data, options)
     });
     });
      }
+
     }
