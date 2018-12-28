@@ -36,15 +36,18 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
     if (isset($data)) {
         $request = json_decode($data);
         $username = $request->username;
+        $district = $request->district;
+        $division = $request->division;
+        $email = $request->email;
+         $mobile = $request->mobile;
         $password = $request->password;
-       $mobile = $request->mobile;
-        $emailadd = $request->email;
+        $confirmpassword = $request->confirmpassword;
 
     }
 
 $username = stripslashes($username);
 $password = stripslashes($password);
-$sql = "INSERT INTO users (username, password, mobile, email) VALUES ('$username', '$password','$mobile' , '$emailadd')";
+$sql = "INSERT INTO users (username,district,division,email,mobile, password,confirmpassword ) VALUES ('$username','$district','$division','$email','$mobile' ,'$password','$confirmpassword')";
 
 if ($con->query($sql) === TRUE) {
   $response= 1;

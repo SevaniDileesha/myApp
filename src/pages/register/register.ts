@@ -19,10 +19,13 @@ import 'rxjs/add/operator/map';
   templateUrl: 'register.html',
 })
 export class RegisterPage {
-  @ViewChild("email") email;
   @ViewChild("username") username;
+  @ViewChild("district") district;
+  @ViewChild("division") division;
+  @ViewChild("email") email;
   @ViewChild("mobile") mobile;
   @ViewChild("password") password;
+  @ViewChild("confirmpassword") confirmpassword;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController,  private http: Http,  public loading: LoadingController) {
 
@@ -37,6 +40,27 @@ subTitle:"Username field is empty",
 buttons: ['OK']
 
 });
+alert.present();
+} else
+if(this.district.value==""){
+
+let alert = this.alertCtrl.create({
+title:"ATTENTION",
+subTitle:"District field is empty",
+buttons: ['OK']
+
+});
+alert.present();
+} else
+if(this.division.value==""){
+
+let alert = this.alertCtrl.create({
+title:"ATTENTION",
+subTitle:"Division field is empty",
+buttons: ['OK']
+
+});
+
 
 alert.present();
 } else
@@ -71,6 +95,16 @@ subTitle:"Password field is empty",
 buttons: ['OK']
 
 });
+alert.present();
+} else
+
+if(this.confirmpassword.value==""){
+let alert = this.alertCtrl.create({
+title:"ATTENTION",
+subTitle:"Confirm Password field is empty",
+buttons: ['OK']
+
+});
 
 alert.present();
 }else{
@@ -82,9 +116,13 @@ let options = new RequestOptions({ headers: headers });
 let data = {
 
 username: this.username.value,
-password: this.password.value,
+district: this.district.value,
+division: this.division.value,
+email: this.email.value,
 mobile: this.mobile.value,
-email: this.email.value
+password: this.password.value,
+confirmpassword: this.confirmpassword.value
+
 
 };
 
