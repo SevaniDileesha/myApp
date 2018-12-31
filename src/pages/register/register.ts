@@ -133,6 +133,7 @@ content: 'Processing please wait…',
 
 loader.present().then(() => {
 this.http.post('http://localhost/myApp/register.php',data, options)
+//this.http.post('https://2f1e6177.ngrok.io/register.php',data,options)
 //this.http.post('http://ionicdon.com/mobile/register.php',data, options)
 
 .map(res => res.json())

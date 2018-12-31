@@ -50,6 +50,7 @@ content: 'Processing please wait...',
 });
 
 loader.present().then(() => {
+//  this.http.post('https://2f1e6177.ngrok.io/retrieve_data.php',data,options)
 this.http.post('http://localhost/myApp/retrieve_data.php',data, options)
 //this.http.post('http://edomonitor.com/school-evaluation-api/retrieve_data.php',data, options)
 

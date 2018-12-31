@@ -76,6 +76,7 @@ content: 'Processing please wait…',
 });
 
 loader.present().then(() => {
+//  this.http.post('https://2f1e6177.ngrok.io/login.php',data,options)
 this.http.post('http://localhost/myApp/login.php',data,options)
 //this.http.post('http://ionicdon.com/mobile/login.php',data,options)
 
