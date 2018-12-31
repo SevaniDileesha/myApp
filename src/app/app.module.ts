@@ -14,7 +14,11 @@ import { LoginPage} from '../pages/login/login';
 import { RegisterPage} from '../pages/register/register';
 import{ProfilePage} from '../pages/profile/profile';
 import{IonicStorageModule} from '@ionic/storage';
-import{HttpClientModule} from '@angular/common/http';
+import{HttpClientModule, HttpClient} from '@angular/common/http';
+import { ChatComponent } from '../components/chat/chat';
+import { PusherProvider } from '../providers/pusher/pusher';
+import { EmojiPanelComponent } from '../components/emoji-panel/emoji-panel';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -25,6 +29,8 @@ import{HttpClientModule} from '@angular/common/http';
     ChatPage,
     RegisterPage,
     ProfilePage,
+    ChatComponent,
+    EmojiPanelComponent,
     TabsPage
   ],
   imports: [
@@ -49,7 +55,10 @@ import{HttpClientModule} from '@angular/common/http';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    HttpClient,
+    PusherProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    PusherProvider
   ]
 })
 export class AppModule {}
