@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController,AlertController ,NavParams } from 'ionic-angular';
 import {Http, Headers, RequestOptions}  from "@angular/http";
 import { LoadingController } from 'ionic-angular';
 import { ChatPage} from '../chat/chat';
+import { HomePage} from '../home/home';
+import { AddeventPage} from '../addevent/addevent';
+import { Platform } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 /**
  * Generated class for the ProfilePage page.
@@ -21,8 +24,41 @@ data:any;
 username:any;
 items:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,  private http: Http,  public loading: LoadingController) {
+  constructor(public platform: Platform ,public navCtrl: NavController, public navParams: NavParams,  private http: Http,  public loading: LoadingController, public alertCtrl: AlertController) {
   }
+  exitApp(){
+  this.navCtrl.push(HomePage);
+}
+
+  logout(){//to exit app
+      //creating an alert before exiting app
+      let alert = this.alertCtrl.create({
+        title:'Confirm exit',
+        message:'You are about to log out the app?',
+
+        buttons: [
+          {
+            text: 'Confirm',
+            role: ' exitApp()',
+            handler: () => {
+              this.exitApp();
+            }
+          },
+          {
+            text: 'Stay',
+            role:'Stay',
+            handler: () => {
+              console.log('Stay clicked');
+            }
+          }
+        ]
+      });
+      alert.present();
+    }
+
+
+
+
 
   chat(){
     this.navCtrl.push(ChatPage);

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { AddeventPage} from '../addevent/addevent';
+import { ProfilePage} from '../profile/profile';
 /**
  * Generated class for the AdminPage page.
  *
@@ -21,5 +22,9 @@ export class AdminPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdminPage');
   }
+  AddEvent(){
+        this.navCtrl.push(AddeventPage);
+  }
+
 
 }

@@ -5,11 +5,15 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
+  <ion-navbar>
       <div text-center>
             <button ion-button color="dark" (click)="chat()" float-right>Chat With Us</button>
       </div>
+      <div text-center>
+            <button ion-button color="dark" (click)="logout()" float-right>Logout</button>
+      </div>
   <img  src="assets/imgs/main.jpg" >
+    </ion-navbar>
 </ion-header>
 
 
@@ -127,4 +131,13 @@ All are supporting Sustainable Development Goals
 </div>
 </div>
 
+<ion-toolbar>
+  <ion-title>Contact with Us</ion-title>
+  <div class = "list">
+ <div class = "item">Tel: +94 (0)11 2580691 - 8</div>
+ <div class = "item">Fax: +94 (0)11 2581116</div>
+ <div class = "item">Email: info.lk@one.un.org</div>
+</div>
+</ion-toolbar>
+   <img src="assets/imgs/footer.jpg">
 </ion-content>
