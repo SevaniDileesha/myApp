@@ -1,4 +1,4 @@
-emoji-panel {
+
   .emojis {
     &[aria-hidden='true'] {
       animation: slideOutDown 0.7s;
@@ -39,4 +39,3 @@ emoji-panel {
       transform: translate3d(0, 100%, 0);
     }
   }
-}
