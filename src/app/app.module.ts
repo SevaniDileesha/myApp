@@ -7,10 +7,12 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { AdminPage } from '../pages/admin/admin';
 import { ChatPage } from '../pages/chat/chat';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage} from '../pages/login/login';
+import { AddeventPage} from '../pages/addevent/addevent';
 import { RegisterPage} from '../pages/register/register';
 import{ProfilePage} from '../pages/profile/profile';
 import{IonicStorageModule} from '@ionic/storage';
@@ -27,7 +29,9 @@ import { EmojiPanelComponent } from '../components/emoji-panel/emoji-panel';
     HomePage,
     LoginPage,
     ChatPage,
+    AdminPage,
     RegisterPage,
+    AddeventPage,
     ProfilePage,
     ChatComponent,
     EmojiPanelComponent,
@@ -47,6 +51,8 @@ import { EmojiPanelComponent } from '../components/emoji-panel/emoji-panel';
     ContactPage,
     HomePage,
     LoginPage,
+    AddeventPage,
+    AdminPage,
     RegisterPage,
     ProfilePage,
     ChatPage,

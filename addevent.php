@@ -35,14 +35,16 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
     $data = file_get_contents("php://input");
     if (isset($data)) {
         $request = json_decode($data);
-        $message = $request->message;
-        $lastMessageId = $request->lastMessageId;
+        $EventCode = $request->EventCode;
+        $EventName = $request->EventName;
+        $Discription = $request->Discription;
+        $Date = $request->Date;
 
     }
 
-$message = stripslashes($message);
-$lastMessageId = stripslashes($lastMessageId);
-$sql = "INSERT INTO messege (message,lastMessageId) VALUES ('$message','$lastMessageId')";
+$EventCode = stripslashes($EventCode);
+$EventName = stripslashes($EventName);
+$sql = "INSERT INTO events (EventCode,EventName,Discription,Date ) VALUES ('$EventCode','$EventName','$Discription','$Date')";
 
 if ($con->query($sql) === TRUE) {
   $response= 1;

@@ -2,9 +2,12 @@ import { Component,ViewChild } from '@angular/core';
 import { IonicPage, AlertController, NavController, NavParams } from 'ionic-angular';
 import { RegisterPage} from '../register/register';
 import { ProfilePage} from '../profile/profile';
+import { AddeventPage} from '../addevent/addevent';
+import { AdminPage} from '../admin/admin';
 import {Http, Headers, RequestOptions}  from "@angular/http";
 import { LoadingController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -40,6 +43,34 @@ private http: Http, public loading: LoadingController) {
 
 
     signIn(){
+
+      if(this.username.value=="admin" && this.password.value=="admin"){
+
+        let alert = this.alertCtrl.create({
+          title:'Confirm ',
+          message:'You are about go add event page,confirm?',
+
+          buttons: [
+            {
+              text: ' confirm',
+              role: 'confirm',
+              handler: () => {
+                    this.navCtrl.push(AdminPage);
+              }
+            },
+            {
+              text: 'stay',
+              role:'stay',
+              handler: () => {
+                  console.log('Stay clicked');
+              }
+            }
+          ]
+        });
+        alert.present();
+      }else{
+
+
 //// check to confirm the username and password fields are filled
 if(this.username.value=="" ){
 let alert = this.alertCtrl.create({
@@ -75,10 +106,12 @@ content: 'Processing please wait…',
 
 });
 
+
 loader.present().then(() => {
 //  this.http.post('https://2f1e6177.ngrok.io/login.php',data,options)
 this.http.post('http://localhost/myApp/login.php',data,options)
 //this.http.post('http://ionicdon.com/mobile/login.php',data,options)
+
 
 .map(res => res.json())
 .subscribe(res => {
@@ -112,6 +145,6 @@ alert.present();
 });
 
 }
-
+}
 }
 }
