@@ -12,8 +12,8 @@ export class PusherProvider {
 
 
   constructor() {
-      var pusher = new Pusher('PUSHER_KEY', {
-        cluster: 'eu',
+      var pusher = new Pusher('e815537f6599db00d22e', {
+        cluster: 'ap2',
         encrypted: true,
       });
       this.channel = pusher.subscribe('chat');
