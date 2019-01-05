@@ -64,11 +64,23 @@ buttons: ['OK']
 
 alert.present();
 } else
-if(this.email.value==""){
+if(this.email.value=="" ){
 
 let alert = this.alertCtrl.create({
 title:"ATTENTION",
 subTitle:"Email field is empty",
+buttons: ['OK']
+
+});
+
+alert.present();
+}
+else
+if(this.email.pattern!="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ){
+
+let alert = this.alertCtrl.create({
+title:"ATTENTION",
+subTitle:"Enter a valid email",
 buttons: ['OK']
 
 });
@@ -107,6 +119,17 @@ buttons: ['OK']
 });
 
 alert.present();
+}else
+
+if(this.confirmpassword.value!=this.password.value){
+  let alert = this.alertCtrl.create({
+  title:"ATTENTION",
+  subTitle:"Not match",
+  buttons: ['OK']
+
+  });
+
+  alert.present();
 }else{
 
 var headers = new Headers();
