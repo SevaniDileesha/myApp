@@ -35,25 +35,12 @@
         $request = json_decode($data);
         $EventCode = $request->search;
     }
+$sql = "UPDATE events SET EventCode='$EventCode',EventName='$EventName',Discription='$Discription',Date='$Date',Time='$Time',Venue='$Venue'  WHERE EventCode='$EventCode'";
 
-$sql ="SELECT * FROM events WHERE EventCode='$EventCode'";
-
- $result = mysqli_query($con, $sql);
- $response = array();
-
- while($row = mysqli_fetch_array($result)){
-
-        array_push($response, array(
-                  "EventCode"=>$row[0],
-                  "EventName"=>$row[1],
-                  "Discription"=>$row[2],
-                  "Date"=>$row[3],
-                  "Time"=>$row[4],
-                  "Venue"=>$row[5]
-                 ));
+if ($con->query($sql) === TRUE) {
+  $response= 1;
+} else {
+   $response= "Error: " . $sql . "<br>" . $con->error;
 }
-
- echo json_encode(array("server_response"=> $response));
-mysqli_close($con)
-
- ?>
+ echo json_encode( $response);
+?>

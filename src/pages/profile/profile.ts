@@ -6,6 +6,7 @@ import { ChatPage} from '../chat/chat';
 import { HomePage} from '../home/home';
 import { EventsPage} from '../events/events';
 import { AddeventPage} from '../addevent/addevent';
+import { ProfileeventPage} from '../profileevent/profileevent';
 import { Platform } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 /**
@@ -22,6 +23,7 @@ import 'rxjs/add/operator/map';
 })
 export class ProfilePage {
     @ViewChild("search") search;
+    @ViewChild("EventCode") EventCode;
 data:any;
 username:any;
 items:any;
@@ -80,11 +82,20 @@ items:any;
             });
             alert.present();
 
+        }else
+        if(this.search.value!=this.EventCode ){
+            let alert = this.alertCtrl.create({
+                title:"ATTENTION",
+                subTitle:"search field is not valid",
+                buttons: ['OK']
+            });
+            alert.present();
+
         }else{
             let data = {
                     search: this.search.value
                 };
-            this.navCtrl.push(EventsPage,data);
+            this.navCtrl.push(ProfileeventPage,data);
         }
 
     }

@@ -39,12 +39,14 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
         $EventName = $request->EventName;
         $Discription = $request->Discription;
         $Date = $request->Date;
+        $Time = $request->Time;
+        $Venue = $request->Venue;
 
     }
 
 $EventCode = stripslashes($EventCode);
 $EventName = stripslashes($EventName);
-$sql = "INSERT INTO events (EventCode,EventName,Discription,Date ) VALUES ('$EventCode','$EventName','$Discription','$Date')";
+$sql = "INSERT INTO events (EventCode,EventName,Discription,Date,Time,Venue ) VALUES ('$EventCode','$EventName','$Discription','$Date','$Time','$Venue')";
 
 if ($con->query($sql) === TRUE) {
   $response= 1;
