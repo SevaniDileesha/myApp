@@ -4,8 +4,9 @@ import { AddeventPage} from '../addevent/addevent';
 import { EventsPage} from '../events/events';
 import { ProfilePage} from '../profile/profile';
 import { AlertController } from 'ionic-angular';
+import { HomePage} from '../home/home';
 import {Http, Headers, RequestOptions}  from "@angular/http";
-
+import { Platform } from 'ionic-angular';
 /**
  * Generated class for the AdminPage page.
  *
@@ -26,6 +27,40 @@ export class AdminPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdminPage');
   }
+
+  logout(){//to exit app
+      //creating an alert before exiting app
+      let alert = this.alertCtrl.create({
+        title:'Confirm exit',
+        message:'You are about to log out the app?',
+
+        buttons: [
+          {
+            text: 'Confirm',
+            role: ' exitApp()',
+            handler: () => {
+              this.exitApp();
+            }
+          },
+          {
+            text: 'Stay',
+            role:'Stay',
+            handler: () => {
+              console.log('Stay clicked');
+            }
+          }
+        ]
+      });
+      alert.present();
+    }
+
+
+
+    exitApp(){
+    this.navCtrl.push(HomePage);
+  }
+
+
   AddEvent(){
         this.navCtrl.push(AddeventPage);
   }
