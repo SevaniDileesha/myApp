@@ -21,6 +21,14 @@
         <button ion-button color="dark" (click)="logout()" float-right>Logout</button>
   </div>
 
+  <ion-item>
+    <ion-input type="text" placeholder="Search events" name="search" #search></ion-input>
+  </ion-item>
+  <br>
+  <div text-center>
+    <button ion-button color="primary" (click)="SearchIn()">search</button>
+  </div>
+
 
   <ion-slides autoplay="3000" pager>
   <ion-slide>

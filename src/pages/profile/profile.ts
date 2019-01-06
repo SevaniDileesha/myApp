@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController,AlertController ,NavParams } from 'ionic-angular';
 import {Http, Headers, RequestOptions}  from "@angular/http";
 import { LoadingController } from 'ionic-angular';
 import { ChatPage} from '../chat/chat';
 import { HomePage} from '../home/home';
+import { EventsPage} from '../events/events';
 import { AddeventPage} from '../addevent/addevent';
 import { Platform } from 'ionic-angular';
 import 'rxjs/add/operator/map';
@@ -20,6 +21,7 @@ import 'rxjs/add/operator/map';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
+    @ViewChild("search") search;
 data:any;
 username:any;
 items:any;
@@ -67,6 +69,26 @@ items:any;
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
   }
+
+  SearchIn(){
+//// check to confirm the username and password fields are filled
+        if(this.search.value=="" ){
+            let alert = this.alertCtrl.create({
+                title:"ATTENTION",
+                subTitle:"search field is empty",
+                buttons: ['OK']
+            });
+            alert.present();
+
+        }else{
+            let data = {
+                    search: this.search.value
+                };
+            this.navCtrl.push(EventsPage,data);
+        }
+
+    }
+
   ngOnInit(){
     this.username = this.navParams.get('username');
 
