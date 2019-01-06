@@ -13,6 +13,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage} from '../pages/login/login';
 import { AddeventPage} from '../pages/addevent/addevent';
+import { EventsPage} from '../pages/events/events';
 import { RegisterPage} from '../pages/register/register';
 import{ProfilePage} from '../pages/profile/profile';
 import{IonicStorageModule} from '@ionic/storage';
@@ -31,6 +32,7 @@ import { EmojiPanelComponent } from '../components/emoji-panel/emoji-panel';
     ChatPage,
     AdminPage,
     RegisterPage,
+    EventsPage,
     AddeventPage,
     ProfilePage,
     ChatComponent,
@@ -52,6 +54,7 @@ import { EmojiPanelComponent } from '../components/emoji-panel/emoji-panel';
     HomePage,
     LoginPage,
     AddeventPage,
+    EventsPage,
     AdminPage,
     RegisterPage,
     ProfilePage,

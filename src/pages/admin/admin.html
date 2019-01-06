@@ -15,6 +15,16 @@
   <div text-center>
       <button ion-button color="dark" (click)="AddEvent()" >Add Event</button>
     </div>
+
+
+      <ion-item>
+        <ion-input type="text" placeholder="Search events" name="search" #search></ion-input>
+      </ion-item>
+      <br>
+      <div text-center>
+        <button ion-button color="primary" (click)="SearchIn()">search</button>
+      </div>
+
        <h1>Dr. Deshapriya S. Wijetunge</h1>
        <br>
       <h2>Director General-SUNFO, Federation of SUNFO Global Youth Forums</h2>
