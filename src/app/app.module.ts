@@ -21,6 +21,7 @@ import{HttpClientModule, HttpClient} from '@angular/common/http';
 import { ChatComponent } from '../components/chat/chat';
 import { PusherProvider } from '../providers/pusher/pusher';
 import { EmojiPanelComponent } from '../components/emoji-panel/emoji-panel';
+import { ProfileeventPage} from '../pages/profileevent/profileevent';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { EmojiPanelComponent } from '../components/emoji-panel/emoji-panel';
     ProfilePage,
     ChatComponent,
     EmojiPanelComponent,
+    ProfileeventPage,
     TabsPage
   ],
   imports: [
@@ -58,6 +60,7 @@ import { EmojiPanelComponent } from '../components/emoji-panel/emoji-panel';
     AdminPage,
     RegisterPage,
     ProfilePage,
+    ProfileeventPage,
     ChatPage,
     TabsPage
   ],

@@ -24,6 +24,8 @@ export class AddeventPage {
   @ViewChild("EventName") EventName;
   @ViewChild("Discription") Discription;
   @ViewChild("Date") Date;
+  @ViewChild("Time") Time;
+  @ViewChild("Venue") Venue;
 
 
     constructor(public navCtrl: NavController, public alertCtrl: AlertController,  private http: Http,  public loading: LoadingController) {
@@ -60,7 +62,6 @@ buttons: ['OK']
 
 });
 
-
 alert.present();
 } else
 if(this.Date.value==""){
@@ -68,6 +69,28 @@ if(this.Date.value==""){
 let alert = this.alertCtrl.create({
 title:"ATTENTION",
 subTitle:"Date field is empty",
+buttons: ['OK']
+
+});
+
+alert.present();
+}else
+if(this.Time.value==""){
+
+let alert = this.alertCtrl.create({
+title:"ATTENTION",
+subTitle:"Time field is empty",
+buttons: ['OK']
+
+});
+
+alert.present();
+}else
+if(this.Venue.value==""){
+
+let alert = this.alertCtrl.create({
+title:"ATTENTION",
+subTitle:"Venue field is empty",
 buttons: ['OK']
 
 });
@@ -84,7 +107,9 @@ let data = {
 EventCode: this.EventCode.value,
 EventName: this.EventName.value,
 Discription: this.Discription.value,
-Date: this.Date.value
+Date: this.Date.value,
+Time: this.Time.value,
+Venue: this.Venue.value
 
 };
 
@@ -106,7 +131,7 @@ loader.dismiss()
 if(res==1){
 let alert = this.alertCtrl.create({
 title:"CONGRATS",
-subTitle:("you suceessfull register"),
+subTitle:("New event add"),
 buttons: ['OK']
 
 });
