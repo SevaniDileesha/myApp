@@ -22,6 +22,9 @@ import { ChatComponent } from '../components/chat/chat';
 import { PusherProvider } from '../providers/pusher/pusher';
 import { EmojiPanelComponent } from '../components/emoji-panel/emoji-panel';
 import { ProfileeventPage} from '../pages/profileevent/profileevent';
+import{ CallNumber } from "@ionic-native/call-number";
+
+
 
 
 @NgModule({
@@ -70,6 +73,7 @@ import { ProfileeventPage} from '../pages/profileevent/profileevent';
     SplashScreen,
     HttpClient,
     PusherProvider,
+    CallNumber,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PusherProvider
   ]

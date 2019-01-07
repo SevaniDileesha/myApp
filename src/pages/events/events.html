@@ -20,64 +20,80 @@
       <button ion-button color="dark" (click)="deleteEvent()" >Delete Event</button>
     </div>
 
-  <ion-item class ="bg5-style" *ngFor="let item of items" >
-<h2>Welcome </h2>
+    <div text-center>
+        <button ion-button color="dark" (click)="updateEvent()" >Update Event</button>
+      </div>
 
-      <ion-row class ="bg2-style" >
+  <ion-item  *ngFor="let item of items" >
+<br>
+
+      <ion-row  >
           <ion-col col-4>
-               EventCode
+               EventCode:
+               <br>
           </ion-col>
           <ion-col col-8>
+            <br>
               {{item.EventCode}}
           </ion-col>
 
       </ion-row >
 
-    <ion-row class ="bg2-style" >
+    <ion-row  >
       <ion-col col-4>
-        EventName
+        EventName:
+        <br>
       </ion-col>
       <ion-col col-8>
+        <br>
         {{item.EventName}}
       </ion-col>
 
     </ion-row >
 
-    <ion-row class ="bg2-style">
+    <ion-row >
       <ion-col col-4>
-        Discription
+        Discription:
+        <br>
       </ion-col>
       <ion-col col-8>
+        <br>
         {{item.Discription}}
       </ion-col>
 
     </ion-row>
 
-    <ion-row class="bg3-style">
+    <ion-row >
       <ion-col col-4>
-        Date
+        Date:
+        <br>
       </ion-col>
       <ion-col col-8>
+        <br>
         {{item.Date}}
       </ion-col>
 
     </ion-row>
 
-    <ion-row class="bg3-style">
+    <ion-row >
       <ion-col col-4>
-        Time
+        Time:
+        <br>
       </ion-col>
       <ion-col col-8>
+        <br>
         {{item.Time}}
       </ion-col>
 
     </ion-row>
 
-    <ion-row class="bg3-style" >
+    <ion-row  >
       <ion-col col-4>
-        Venue
+        Venue:
+        <br>
       </ion-col>
       <ion-col col-8>
+        <br>
         {{item.Venue}}
       </ion-col>
 

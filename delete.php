@@ -33,9 +33,9 @@
 
     if (isset($data)) {
         $request = json_decode($data);
-        $EventCode = $request->search;
+        $Date = $request->search;
     }
-$sql = "DELETE FROM events WHERE EventCode='$EventCode'";
+$sql = "DELETE FROM events WHERE Date='$Date'";
 
 if ($con->query($sql) === TRUE) {
   $response= 1;
