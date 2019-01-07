@@ -48,7 +48,7 @@ private http: Http, public loading: LoadingController) {
 
         let alert = this.alertCtrl.create({
           title:'Confirm ',
-          message:'You are about go add event page,confirm?',
+          message:'You are going to admin page',
 
           buttons: [
             {
@@ -75,7 +75,7 @@ private http: Http, public loading: LoadingController) {
 if(this.username.value=="" ){
 let alert = this.alertCtrl.create({
 title:"ATTENTION",
-subTitle:"Username field is empty",
+subTitle:"Username can not be empty",
 buttons: ['OK']
 });
 alert.present();
@@ -84,7 +84,7 @@ alert.present();
 if(this.password.value==""){
 let alert = this.alertCtrl.create({
 title:"ATTENTION",
-subTitle:"Password field is empty",
+subTitle:"Password can not be empty",
 buttons: ['OK']
 });
 alert.present();

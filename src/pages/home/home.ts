@@ -29,7 +29,7 @@ toBack(){ //to exit app
   //creating an alert before exiting app
   let alert = this.alertCtrl.create({
     title:'Confirm exit',
-    message:'You are about to exit the application.Confirm ?',
+    message:'You exit the application ?',
 
     buttons: [
       {

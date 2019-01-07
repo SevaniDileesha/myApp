@@ -37,7 +37,7 @@ export class AddeventPage {
 if(this.EventCode.value=="" ){
 let alert = this.alertCtrl.create({
 title:"ATTENTION",
-subTitle:"EventCode field is empty",
+subTitle:"EventCode can not be empty",
 buttons: ['OK']
 
 });
@@ -47,7 +47,7 @@ if(this.EventName.value==""){
 
 let alert = this.alertCtrl.create({
 title:"ATTENTION",
-subTitle:"EventName field is empty",
+subTitle:"EventName can not empty",
 buttons: ['OK']
 
 });
@@ -57,7 +57,7 @@ if(this.Discription.value==""){
 
 let alert = this.alertCtrl.create({
 title:"ATTENTION",
-subTitle:"Discription field is empty",
+subTitle:"Discription can not empty",
 buttons: ['OK']
 
 });
@@ -68,7 +68,7 @@ if(this.Date.value==""){
 
 let alert = this.alertCtrl.create({
 title:"ATTENTION",
-subTitle:"Date field is empty",
+subTitle:"Date can not be empty",
 buttons: ['OK']
 
 });
@@ -79,7 +79,7 @@ if(this.Time.value==""){
 
 let alert = this.alertCtrl.create({
 title:"ATTENTION",
-subTitle:"Time field is empty",
+subTitle:"Time can not be empty",
 buttons: ['OK']
 
 });
@@ -90,7 +90,7 @@ if(this.Venue.value==""){
 
 let alert = this.alertCtrl.create({
 title:"ATTENTION",
-subTitle:"Venue field is empty",
+subTitle:"Venue can not be empty",
 buttons: ['OK']
 
 });
@@ -131,7 +131,7 @@ loader.dismiss()
 if(res==1){
 let alert = this.alertCtrl.create({
 title:"CONGRATS",
-subTitle:("New event add"),
+subTitle:("Successful add event"),
 buttons: ['OK']
 
 });
@@ -142,7 +142,7 @@ this.navCtrl.push(LoginPage);
 
 let alert = this.alertCtrl.create({
 title:"ERROR",
-subTitle:("unsuccess"),
+subTitle:("Unsuccess add event"),
 buttons: ['OK']
 
 });

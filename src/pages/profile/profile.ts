@@ -38,7 +38,7 @@ items:any;
       //creating an alert before exiting app
       let alert = this.alertCtrl.create({
         title:'Confirm exit',
-        message:'You are about to log out the app?',
+        message:'You are logging out',
 
         buttons: [
           {
@@ -61,9 +61,6 @@ items:any;
     }
 
 
-
-
-
   chat(){
     this.navCtrl.push(ChatPage);
     }
@@ -78,15 +75,6 @@ items:any;
             let alert = this.alertCtrl.create({
                 title:"ATTENTION",
                 subTitle:"search field is empty",
-                buttons: ['OK']
-            });
-            alert.present();
-
-        }else
-        if(this.search.value!=this.EventCode ){
-            let alert = this.alertCtrl.create({
-                title:"ATTENTION",
-                subTitle:"search field is not valid",
                 buttons: ['OK']
             });
             alert.present();

@@ -23,6 +23,7 @@ import { PusherProvider } from '../providers/pusher/pusher';
 import { EmojiPanelComponent } from '../components/emoji-panel/emoji-panel';
 import { ProfileeventPage} from '../pages/profileevent/profileevent';
 
+
 @NgModule({
   declarations: [
     MyApp,
