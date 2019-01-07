@@ -35,16 +35,16 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
 
     if (isset($data)) {
         $request = json_decode($data);
-        $username = $request->username;
+        $email = $request->email;
         $password = $request->password;
       }
 
-      $username= mysqli_real_escape_string($con,$username);
+      $email= mysqli_real_escape_string($con,$email);
       $password = mysqli_real_escape_string($con,$password);
-     $username = stripslashes($username);
+     $email = stripslashes($email);
     $password = stripslashes($password);
 
-    $sql = "SELECT id FROM users WHERE username = '$username' and password = '$password'";
+    $sql = "SELECT id FROM users WHERE email = '$email' and password = '$password'";
 
       $result = mysqli_query($con,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);

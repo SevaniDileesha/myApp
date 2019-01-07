@@ -23,9 +23,9 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
   $data = file_get_contents("php://input");
     if (isset($data)) {
         $request = json_decode($data);
-        $username = $request->username;
+        $email = $request->email;
     }
-$sql ="SELECT * FROM users WHERE username='$username'";
+$sql ="SELECT * FROM users WHERE email='$email'";
  $result = mysqli_query($con, $sql);
  $response = array();
  while($row = mysqli_fetch_array($result)){

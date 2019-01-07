@@ -5,6 +5,8 @@ import { LoginPage} from '../login/login';
 import { AlertController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
+import{ CallNumber } from "@ionic-native/call-number";
+
 
 @Component({
   selector: 'page-home',
@@ -12,7 +14,7 @@ import { Platform } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public platform: Platform ,public navCtrl: NavController, public alertCtrl: AlertController,public loading: LoadingController) {
+  constructor(public platform: Platform ,public navCtrl: NavController, public alertCtrl: AlertController,public loading: LoadingController,private callSve:CallNumber) {
 }
 
   OnGoToLogin(){
@@ -50,5 +52,15 @@ toBack(){ //to exit app
   });
   alert.present();
 }
+
+
+  call(){
+  this.callSve.callNumber('0770045315',true).then(()=>{
+      console.log('sms worked');
+  }).catch((err) =>{
+    alert(JSON.stringify(err))
+  });
+  }
+
 
 }

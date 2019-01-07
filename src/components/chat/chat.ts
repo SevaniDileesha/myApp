@@ -40,7 +40,7 @@ export class ChatComponent implements OnInit {
       this.messages = this.messages.concat(data);
       this.message = '';
       this.http
-       .post('http://739fedff.ngrok.io/messages', data)
+       .post('http://e7b9cd46.ngrok.io/messages', data)
       //this.http
       //.post('https://2f1e6177.ngrok.io/message.php',data)
         .subscribe((res: Message) => {});

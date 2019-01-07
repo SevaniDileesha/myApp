@@ -21,7 +21,7 @@ import 'rxjs/add/operator/map';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  @ViewChild("username") username;
+  @ViewChild("email") email;
   @ViewChild("password") password;
   data:string;
 items:any;
@@ -44,7 +44,7 @@ private http: Http, public loading: LoadingController) {
 
     signIn(){
 
-      if(this.username.value=="admin" && this.password.value=="admin"){
+      if(this.email.value=="admin" && this.password.value=="admin"){
 
         let alert = this.alertCtrl.create({
           title:'Confirm ',
@@ -72,10 +72,10 @@ private http: Http, public loading: LoadingController) {
 
 
 //// check to confirm the username and password fields are filled
-if(this.username.value=="" ){
+if(this.email.value=="" ){
 let alert = this.alertCtrl.create({
 title:"ATTENTION",
-subTitle:"Username can not be empty",
+subTitle:"Email can not be empty",
 buttons: ['OK']
 });
 alert.present();
@@ -97,7 +97,7 @@ headers.append('Content-Type', 'application/json' );
 let options = new RequestOptions({ headers: headers });
 let data = {
 
-username: this.username.value,
+email: this.email.value,
 password: this.password.value
 };
 
@@ -132,7 +132,7 @@ this.navCtrl.push(ProfilePage, data);
 
 let alert = this.alertCtrl.create({
 title:"ERROR",
-subTitle:"Your Login Username or Password is invalid",
+subTitle:"Your Login email or Password is invalid",
 buttons: ['OK']
 
 });

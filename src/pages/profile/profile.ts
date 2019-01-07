@@ -9,6 +9,7 @@ import { AddeventPage} from '../addevent/addevent';
 import { ProfileeventPage} from '../profileevent/profileevent';
 import { Platform } from 'ionic-angular';
 import 'rxjs/add/operator/map';
+
 /**
  * Generated class for the ProfilePage page.
  *
@@ -25,7 +26,7 @@ export class ProfilePage {
     @ViewChild("search") search;
     @ViewChild("EventCode") EventCode;
 data:any;
-username:any;
+email:any;
 items:any;
 
   constructor(public platform: Platform ,public navCtrl: NavController, public navParams: NavParams,  private http: Http,  public loading: LoadingController, public alertCtrl: AlertController) {
@@ -89,7 +90,7 @@ items:any;
     }
 
   ngOnInit(){
-    this.username = this.navParams.get('username');
+    this.email = this.navParams.get('email');
 
 var headers = new Headers();
 headers.append("Accept", 'application/json');
@@ -97,7 +98,7 @@ headers.append('Content-Type', 'application/json' );
 let options = new RequestOptions({ headers: headers });
 
 let data = {
-    username: this.username
+    email: this.email
 
   };
 
