@@ -8,16 +8,17 @@
 
   <ion-navbar>
     <ion-title>EVENTS</ion-title>
-    <div text-center>
-        <button ion-button color="dark" (click)="deleteEvent()" >Delete Event</button>
-      </div>
-      
+
+
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <div text-center>
+      <button ion-button color="dark" (click)="deleteEvent()" >Delete Event</button>
+    </div>
 
   <ion-item class ="bg5-style" *ngFor="let item of items" >
 <h2>Welcome </h2>

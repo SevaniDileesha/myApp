@@ -5,6 +5,7 @@ import {Headers, Http, RequestOptions} from "@angular/http";
 import { LoadingController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { LoginPage} from '../login/login';
+
 /**
  * Generated class for the ProfileeventPage page.
  *
@@ -28,6 +29,7 @@ export class ProfileeventPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfileeventPage');
   }
+
   ngOnInit() {
   this.search = this.navParams.get('search');
 

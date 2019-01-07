@@ -33,10 +33,10 @@
 
     if (isset($data)) {
         $request = json_decode($data);
-        $EventCode = $request->search;
+        $Date = $request->search;
     }
 
-$sql ="SELECT * FROM events WHERE EventCode='$EventCode'";
+$sql ="SELECT * FROM events WHERE Date='$Date'";
 
  $result = mysqli_query($con, $sql);
  $response = array();

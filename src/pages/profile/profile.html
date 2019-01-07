@@ -17,16 +17,18 @@
   <div text-center>
         <button ion-button color="dark" (click)="chat()" float-right>Chat With Us</button>
   </div>
+
   <div text-center>
         <button ion-button color="dark" (click)="logout()" float-right>Logout</button>
   </div>
 
   <ion-item>
-    <ion-input type="text" placeholder="Search events" name="search" #search></ion-input>
+    <ion-input type="text" placeholder="Search using date DD/MM/YY" name="search" #search></ion-input>
   </ion-item>
   <br>
+
   <div text-center>
-    <button ion-button color="primary" (click)="SearchIn()">search</button>
+    <button ion-button color="primary" (click)="SearchIn()">search events</button>
   </div>
 
 

@@ -45,16 +45,7 @@ export class AdminPage {
         if(this.search.value=="" ){
             let alert = this.alertCtrl.create({
                 title:"ATTENTION",
-                subTitle:"search field is empty",
-                buttons: ['OK']
-            });
-            alert.present();
-
-        }else
-        if(this.search.value!=this.EventCode ){
-            let alert = this.alertCtrl.create({
-                title:"ATTENTION",
-                subTitle:"search field is not valid",
+                subTitle:"search can not be empty",
                 buttons: ['OK']
             });
             alert.present();
